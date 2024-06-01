@@ -15,11 +15,10 @@ public class Filme {
     private String titulo;
     private String descricao;
     @IdadeRange(min= 14)
-    private Integer ClassificaçãoIndicativa;
+    private Integer classificaçaoindicativa;
 
     @Transient
     private Long anolancado;
-
 
     @ManyToOne
     @JoinColumn(name = "genero_id", nullable = false)
