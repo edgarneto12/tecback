@@ -1,6 +1,5 @@
-Package br.com.fujideia.sim.tecback.modelo;
+package br.com.fujideia.iesp.tecback.model;
 
-import br.com.fujideia.iesp.tecback.model.Genero;
 import br.com.fujideia.iesp.tecback.validator.IdadeRange;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -16,7 +15,7 @@ public class Serie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
-    private String genero;
+
     private int ano;
     private int duracao;
     private double relevancia;
