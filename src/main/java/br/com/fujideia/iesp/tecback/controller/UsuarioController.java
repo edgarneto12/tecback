@@ -1,6 +1,7 @@
 package br.com.fujideia.iesp.tecback.controller;
 
 import br.com.fujideia.iesp.tecback.model.Usuario;
+import br.com.fujideia.iesp.tecback.model.Cartao;
 import br.com.fujideia.iesp.tecback.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,5 +33,10 @@ public class UsuarioController {
     public void deleteUsuario(@PathVariable Long id) {
         Service.excluir(id);
     }
+
+    /* @PutMapping("/{id}/cartao")
+    public Cartao atualizarCartao(@PathVariable Long id, @RequestBody Cartao cartao) {
+        return usuarioService.atualizarCartao(id, cartao);
+    } */
 
 }

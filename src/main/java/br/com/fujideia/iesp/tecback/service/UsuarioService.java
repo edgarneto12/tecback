@@ -1,7 +1,9 @@
 package br.com.fujideia.iesp.tecback.service;
 
 import br.com.fujideia.iesp.tecback.model.Usuario;
+import br.com.fujideia.iesp.tecback.model.Cartao;
 import br.com.fujideia.iesp.tecback.repository.UsuarioRepository;
+import br.com.fujideia.iesp.tecback.repository.CartaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,8 +34,17 @@ public class UsuarioService {
         }
     }
 
-    public void excluir(Long id) {
-        usuarioRepository.deleteById(id);
+    public void excluir(Long id) {usuarioRepository.deleteById(id);
     }
+
+    /* public Cartao atualizarCartao(Long usuarioId, Cartao novoCartao) {
+        Usuario usuario = usuarioRepository.findById(usuarioId).orElseThrow(() -> new RuntimeException("Usuario não encontrado"));
+        Cartao cartaoAtual = usuario.getCartao();
+        cartaoAtual.setNumero(novoCartao.getNumero());
+        cartaoAtual.setCodigoSeguranca(novoCartao.getCodigoSeguranca());
+        cartaoAtual.setNomeTitular(novoCartao.getNomeTitular());
+        cartaoAtual.setDataValidadeMMYY(novoCartao.getDataValidadeMMYY());
+        return cartaoRepository.save(cartaoAtual);
+    } */
 
 }

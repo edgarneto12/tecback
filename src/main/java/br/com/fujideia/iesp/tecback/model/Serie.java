@@ -1,17 +1,20 @@
 package br.com.fujideia.iesp.tecback.model;
 
+import br.com.fujideia.iesp.tecback.model.Genero;
 import br.com.fujideia.iesp.tecback.validator.IdadeRange;
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-public class Filme {
+@Data
+public class Serie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String titulo;
     private int ano;
     private int duracao;
@@ -19,7 +22,7 @@ public class Filme {
     private String sinopse;
     private String trailer;
 
-    @IdadeRange(min= 14)
+    @IdadeRange(min= 18)
     private Integer classificacaoindicativa;
 
 
@@ -29,3 +32,4 @@ public class Filme {
     @JoinColumn(name = "genero_id", nullable = false)
     private Genero genero;
 }
+
