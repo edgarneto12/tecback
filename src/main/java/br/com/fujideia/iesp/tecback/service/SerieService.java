@@ -2,6 +2,7 @@ package br.com.fujideia.iesp.tecback.service;
 
 import br.com.fujideia.iesp.tecback.model.Serie;
 
+import br.com.fujideia.iesp.tecback.repository.SerieRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
