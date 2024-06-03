@@ -6,7 +6,7 @@ import br.com.fujideia.iesp.tecback.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface FavoritoRepository extends JpaRepository<Favorito, Long> {
+public interface FavoritoRepository extends JpaRepository<Favorito, Integer> {
 
     List<Favorito> findByUser(Usuario usuario);
 }
