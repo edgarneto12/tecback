@@ -2,14 +2,15 @@ package br.com.fujideia.iesp.tecback.service;
 
 import br.com.fujideia.iesp.tecback.model.Usuario;
 import br.com.fujideia.iesp.tecback.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Service
 public class UsuarioService {
-    @Autowired
+
     private UsuarioRepository usuarioRepository;
 
     public Usuario criarUsuario(Usuario novoUsuario) {
@@ -32,7 +33,7 @@ public class UsuarioService {
         }
     }
 
-    public void excluir(Long id) {
+    public void excluir(Integer id) {
         usuarioRepository.deleteById(id);
     }
 
