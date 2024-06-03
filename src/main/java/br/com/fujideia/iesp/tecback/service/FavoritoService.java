@@ -1,5 +1,7 @@
 package br.com.fujideia.iesp.tecback.service;
 
+import br.com.fujideia.iesp.tecback.handler.FilmeNotFoundException;
+import br.com.fujideia.iesp.tecback.handler.UsuarioNotFoundException;
 import br.com.fujideia.iesp.tecback.model.Favorito;
 import br.com.fujideia.iesp.tecback.model.Filme;
 import br.com.fujideia.iesp.tecback.model.Usuario;
@@ -11,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
-import java.util.Optional;
 
 @AllArgsConstructor
 @Service
@@ -26,8 +27,8 @@ public class FavoritoService {
     private FilmeRepository filmeRepository;
 
     public void addFavorite(Integer usuarioId, Integer filmeId) {
-        Usuario usuario = usuarioRepository.findById(usuarioId).orElseThrow();
-        Filme filme = filmeRepository.findById(filmeId).orElseThrow();
+        Usuario usuario = usuarioRepository.findById(usuarioId).orElseThrow(() -> new UsuarioNotFoundException(usuarioId));
+        Filme filme = filmeRepository.findById(filmeId).orElseThrow(() -> new FilmeNotFoundException(filmeId));
         Favorito favorito = new Favorito();
         favorito.setUsuario(usuario);
         favorito.setFilme(filme);
@@ -39,8 +40,8 @@ public class FavoritoService {
     }
 
     public List<Favorito> getFavorites(Integer userId) {
-        Usuario usuario = usuarioRepository.findById(userId).orElseThrow();
-        return favoritoRepository.findByUser(usuario);
+        Usuario usuario = usuarioRepository.findById(userId).orElseThrow(() -> new UsuarioNotFoundException(userId));
+        return favoritoRepository.findByUsuario(usuario);
     }
 
 }
