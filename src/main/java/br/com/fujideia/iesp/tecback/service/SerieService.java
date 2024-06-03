@@ -1,5 +1,6 @@
 package br.com.fujideia.iesp.tecback.service;
 
+import br.com.fujideia.iesp.tecback.model.Filme;
 import br.com.fujideia.iesp.tecback.model.Serie;
 
 import br.com.fujideia.iesp.tecback.repository.SerieRepository;
@@ -13,6 +14,7 @@ import java.util.Optional;
 @Service
 public class SerieService {
 
+    public List<Serie> getFavorites;
     private SerieRepository repository;
 
     public Serie salvar(Serie serie){
@@ -43,5 +45,6 @@ public class SerieService {
         repository.deleteById(id);
 
     }
+
 
 }

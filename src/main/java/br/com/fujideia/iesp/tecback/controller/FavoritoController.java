@@ -1,6 +1,8 @@
 package br.com.fujideia.iesp.tecback.controller;
 
 import br.com.fujideia.iesp.tecback.model.Favorito;
+import br.com.fujideia.iesp.tecback.model.Filme;
+import br.com.fujideia.iesp.tecback.model.Serie;
 import br.com.fujideia.iesp.tecback.service.FavoritoService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,8 @@ public class FavoritoController {
         favoritoService.removeFavorite(favoriteId);
         return ResponseEntity.ok().build();
     }
+
+
 
     @GetMapping("/{userId}")
     public ResponseEntity<List<Favorito>> getFavorites(@PathVariable Integer userId) {
