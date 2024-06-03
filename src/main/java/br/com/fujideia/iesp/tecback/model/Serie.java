@@ -1,8 +1,7 @@
-<<<<<<< HEAD
+
 package br.com.fujideia.iesp.tecback.model;
-=======
-Package br.com.fujideia.sim.tecback.modelo;
->>>>>>> 7afd100a54cfe022a07a4a6f29238dde764b46d4
+
+
 
 import br.com.fujideia.iesp.tecback.model.Genero;
 import br.com.fujideia.iesp.tecback.validator.IdadeRange;
@@ -20,10 +19,6 @@ public class Serie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
-<<<<<<< HEAD
-=======
-    private String genero;
->>>>>>> 7afd100a54cfe022a07a4a6f29238dde764b46d4
     private int ano;
     private int duracao;
     private double relevancia;
@@ -39,9 +34,7 @@ public class Serie {
     @ManyToOne
     @JoinColumn(name = "genero_id", nullable = false)
     private Genero genero;
-<<<<<<< HEAD
+
+
 }
 
-=======
-}
->>>>>>> 7afd100a54cfe022a07a4a6f29238dde764b46d4
