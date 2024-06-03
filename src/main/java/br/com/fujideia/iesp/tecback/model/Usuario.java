@@ -12,14 +12,13 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String nomecompleto;
     private String email;
     private String senha;
     private String confirmarsenha;
     private String cpfcnpj;
-
     private boolean ativacao;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
