@@ -3,13 +3,15 @@ package br.com.fujideia.iesp.tecback.controller;
 import br.com.fujideia.iesp.tecback.model.Usuario;
 import br.com.fujideia.iesp.tecback.model.Cartao;
 import br.com.fujideia.iesp.tecback.service.UsuarioService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/usuario")
 public class UsuarioController {
     @Autowired
     private UsuarioService Service;
@@ -20,7 +22,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public Usuario atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
+    public Usuario atualizarUsuario(@PathVariable Integer id, @RequestBody Usuario usuario) {
         return Service.atualizarUsuario(usuario);
     }
 
@@ -30,7 +32,7 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUsuario(@PathVariable Long id) {
+    public void deleteUsuario(@PathVariable Integer id) {
         Service.excluir(id);
     }
 
