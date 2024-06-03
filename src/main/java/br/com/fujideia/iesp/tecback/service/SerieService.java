@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 package br.com.fujideia.iesp.tecback.service;
 
 import br.com.fujideia.iesp.tecback.model.Serie;
+=======
+packpackage br.com.fujideia.iesp.tecback.service;
+
+>>>>>>> 7afd100a54cfe022a07a4a6f29238dde764b46d4
 import br.com.fujideia.iesp.tecback.repository.SerieRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -40,5 +45,9 @@ public class SerieService {
 
     public void excluir(Integer id){
         repository.deleteById(id);
+<<<<<<< HEAD
     }
+=======
+}
+>>>>>>> 7afd100a54cfe022a07a4a6f29238dde764b46d4
 }
