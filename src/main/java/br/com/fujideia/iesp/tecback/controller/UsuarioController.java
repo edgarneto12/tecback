@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/usuario")
 public class UsuarioController {
-    @Autowired
+
     private UsuarioService Service;
 
     @PostMapping
@@ -32,7 +32,7 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUsuario(@PathVariable Integer id) {
+    public void excluirUsuario(@PathVariable Integer id) {
         Service.excluir(id);
     }
 

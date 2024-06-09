@@ -1,9 +1,7 @@
-
 package br.com.fujideia.iesp.tecback.model;
 
 
 
-import br.com.fujideia.iesp.tecback.model.Genero;
 import br.com.fujideia.iesp.tecback.validator.IdadeRange;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -19,17 +17,15 @@ public class Serie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
-    private int ano;
+    private int anoLancado;
     private int duracao;
     private double relevancia;
     private String sinopse;
     private String trailer;
 
-    @IdadeRange(min= 18)
+    @IdadeRange(min= 0)
     private Integer classificacaoindicativa;
 
-
-    private Long anolancado;
 
     @ManyToOne
     @JoinColumn(name = "genero_id", nullable = false)
