@@ -1,7 +1,6 @@
 package br.com.fujideia.iesp.tecback.service;
 
-import br.com.fujideia.iesp.tecback.handler.FilmeNotFoundException;
-import br.com.fujideia.iesp.tecback.handler.UsuarioNotFoundException;
+import br.com.fujideia.iesp.tecback.handler.HandlerNotFoundException;
 import br.com.fujideia.iesp.tecback.model.Favorito;
 import br.com.fujideia.iesp.tecback.model.Filme;
 import br.com.fujideia.iesp.tecback.model.Usuario;
@@ -27,8 +26,8 @@ public class FavoritoService {
     private FilmeRepository filmeRepository;
 
     public void addFavorite(Integer usuarioId, Integer filmeId) {
-        Usuario usuario = usuarioRepository.findById(usuarioId).orElseThrow(() -> new UsuarioNotFoundException(usuarioId));
-        Filme filme = filmeRepository.findById(filmeId).orElseThrow(() -> new FilmeNotFoundException(filmeId));
+        Usuario usuario = usuarioRepository.findById(usuarioId).orElseThrow(() -> new HandlerNotFoundException("Usuario com o id: " + usuarioId +"não foi encontrado"));
+        Filme filme = filmeRepository.findById(filmeId).orElseThrow(() -> new HandlerNotFoundException("Filme com o Id:" + filmeId + "não foi encontrado"));
         Favorito favorito = new Favorito();
         favorito.setUsuario(usuario);
         favorito.setFilme(filme);
@@ -39,8 +38,8 @@ public class FavoritoService {
         favoritoRepository.deleteById(favoriteId);
     }
 
-    public List<Favorito> getFavorites(Integer userId) {
-        Usuario usuario = usuarioRepository.findById(userId).orElseThrow(() -> new UsuarioNotFoundException(userId));
+    public List<Favorito> getFavorites(Integer usuarioId) {
+        Usuario usuario = usuarioRepository.findById(usuarioId).orElseThrow(() -> new HandlerNotFoundException("Usuario com o id: " + usuarioId +"não foi encontrado"));
         return favoritoRepository.findByUsuario(usuario);
     }
 
