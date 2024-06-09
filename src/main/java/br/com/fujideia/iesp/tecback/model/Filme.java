@@ -13,11 +13,16 @@ public class Filme {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String titulo;
-    private String descricao;
-    @IdadeRange(min= 14)
-    private Integer classificaçaoindicativa;
+    private int ano;
+    private int duracao;
+    private double relevancia;
+    private String sinopse;
+    private String trailer;
 
-    @Transient
+    @IdadeRange(min= 14)
+    private Integer classificacaoindicativa;
+
+
     private Long anolancado;
 
     @ManyToOne
