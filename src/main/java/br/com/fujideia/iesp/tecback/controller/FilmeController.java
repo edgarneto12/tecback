@@ -30,10 +30,10 @@ public class FilmeController {
         return service.listarTodos();
     }
 
-    @GetMapping
-    public List<Filme> obterFilmesFavoritos() {
-        return service.getFavorites();
-    }
+//    @GetMapping
+//    public List<Filme> obterFilmesFavoritos() {
+//        return service.getFavorites();
+//    }
 
     @GetMapping("/{id}")
     public Filme buscarPorId(@PathVariable Integer id){

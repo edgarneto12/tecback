@@ -21,9 +21,9 @@ public class FilmeService {
         return repository.findAll();
     }
 
-    public List<Filme> getFavorites(){
-        return repository.findAll();
-    }
+//    public List<Filme> getFavorites(){
+//        return repository.findAll();
+//    }
 
     public Filme atualizar(Filme filme){
         if(filme.getId()==null){

@@ -30,10 +30,10 @@ public class SerieController {
         return service.listarTodos();
     }
 
-    @GetMapping
-    public List<Serie> obterSerieFavorita() {
-        return service.getFavorites;
-    }
+//    @GetMapping
+//    public List<Serie> obterSerieFavorita() {
+//        return service.getFavorites;
+//    }
     @GetMapping("/{id}")
     public Serie buscarPorId(@PathVariable Integer id){
         return service.buscarPorId(id);
@@ -44,8 +44,8 @@ public class SerieController {
         service.excluir(id);
 }
 
-    @GetMapping
-    public List<Serie> obterSeriesFavoritas() {
-        return obterSeriesFavoritas();
-    }
+//    @GetMapping
+//    public List<Serie> obterSeriesFavoritas() {
+//        return obterSeriesFavoritas();
+//    }
 }
